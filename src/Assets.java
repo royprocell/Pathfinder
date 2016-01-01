@@ -1,12 +1,17 @@
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class Assets
 {
-	public static byte worldData[];
+	private static byte worldData[];
+	private static int worldWidth, worldHeight, xSpawn, ySpawn;
+	private static int worldConfig[];
+	
 	//natural tiles
 	public static BufferedImage dirt, grass, stone, blackDirt, sand, snow, rock, gravel, water, deepWater;
 	//ore tiles
@@ -61,7 +66,7 @@ public class Assets
 		woodWall = ImageLoader.loadImage("/resources/woodWall.png");
 	}
 	
-	public static void loadWorld(String path)
+	public static void loadWorld(String path) //this will load the world data file. this file stores the information about all the tiles on the map.
 	{
 		File file = new File(path);
 		FileInputStream fInput = null;
@@ -96,5 +101,71 @@ public class Assets
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public static void loadWorldConfig(String path) //this will load the world config. this file stores the world dimensions and the spawn location.
+	{
+		String fileData;
+		String fileArray[];
+		try
+		{
+			File file = new File(path);
+			FileReader fr = new FileReader(file);
+			BufferedReader br = new BufferedReader(fr);
+			StringBuffer sb = new StringBuffer();
+			while((fileData = br.readLine()) != null)
+			{
+				sb.append(fileData);
+				sb.append("\n");
+			}
+			fr.close();
+			fileData = sb.toString();
+			
+			fileArray = fileData.split("\\s+");
+			worldWidth = parseInt(fileArray[0]);
+			worldHeight = parseInt(fileArray[1]);
+			xSpawn = parseInt(fileArray[2]);
+			ySpawn = parseInt(fileArray[3]);
+			System.out.println("World Dimensions: " + worldWidth + "," + worldHeight);
+			System.out.println("World Spawn: " + xSpawn + "," + ySpawn);
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private static int parseInt(String s) {
+		try {
+			return Integer.parseInt(s);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	
+	public static int getWorldWidth()
+	{
+		return worldWidth;
+	}
+	
+	public static int getWorldHeight()
+	{
+		return worldHeight;
+	}
+	
+	public static int getXSpawn()
+	{
+		return xSpawn;
+	}
+	
+	public static int getYSpawn()
+	{
+		return ySpawn;
+	}
+	
+	public static byte[] getWorldData()
+	{
+		return worldData;
 	}
 }

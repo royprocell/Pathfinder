@@ -6,15 +6,15 @@ public class Game
 	private Display display;
 	private Graphics g;
 	private BufferStrategy bs;
-	public int width;
-	public int height;
+	public static int width;
+	public static int height;
 	public boolean isRunning = false;
 	public static State gameState, menuState, bankState;
 	
 	public Game(String title, int width, int height)
 	{
-		this.width = width;
-		this.height= height;
+		Game.width = width;
+		Game.height= height;
 		
 		display = new Display(title, width, height);
 	}

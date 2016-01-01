@@ -15,17 +15,17 @@ public class Main
 		width = (int) screen.getWidth() - 100; //subtracted 100 so that the window fits with os toolbars, etc
 		height = (int) screen.getHeight() - 100;
 		
-		System.out.println("Screen Width: " + (int) screen.getWidth());
-		System.out.println("Screen Height: " + (int) screen.getHeight());
-		System.out.println("Game Width: " + width);
-		System.out.println("Game Height: " + height);
+		System.out.println("Screen: " + (int) screen.getWidth() + "x" + (int) screen.getHeight());
+		System.out.println("Game: " + width + "x" + height);
 		
 		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/world.map");
-		System.out.println("First Byte: " + Assets.worldData[0]);
+		System.out.println("First Byte: " + Assets.getWorldData()[1]);
 		
-		//Game game = new Game("Pathfinder", width, height);
-		//game.isRunning = true;
-		//game.run();
+		Assets.loadWorldConfig(System.getProperty("user.dir") + "/bin/resources/world.cfg");
+		
+		Game game = new Game("Pathfinder", width, height);
+		game.isRunning = true;
+		game.run();
 	}
 
 }
