@@ -31,12 +31,12 @@ public class Assets
 	{
 		dirt = ImageLoader.loadImage("/resources/dirt.png");
 		grass = ImageLoader.loadImage("/resources/grass.png");
-		stone = ImageLoader.loadImage("/resources/stone.png");
+		//stone = ImageLoader.loadImage("/resources/stone.png");
 		blackDirt = ImageLoader.loadImage("/resources/blackDirt.png");
 		sand = ImageLoader.loadImage("/resources/sand.png");
-		snow = ImageLoader.loadImage("/resources/snow.png");
-		rock = ImageLoader.loadImage("/resources/rock.png");
-		gravel = ImageLoader.loadImage("/resources/gravel.png");
+		//snow = ImageLoader.loadImage("/resources/snow.png");
+		//rock = ImageLoader.loadImage("/resources/rock.png");
+		//gravel = ImageLoader.loadImage("/resources/gravel.png");
 		water = ImageLoader.loadImage("/resources/water.png");
 		deepWater = ImageLoader.loadImage("/resources/deepWater.png");
 		
@@ -47,22 +47,22 @@ public class Assets
 		zincOre = ImageLoader.loadImage("/resources/zincOre.png");
 		silverOre = ImageLoader.loadImage("/resources/silverOre.png");
 		stoneOre = ImageLoader.loadImage("/resources/stoneOre.png");
-		ironOre = ImageLoader.loadImage("/resources/ironOre.png");
+		//ironOre = ImageLoader.loadImage("/resources/ironOre.png");
 		
 		tree = ImageLoader.loadImage("/resources/tree.png");
-		oakTree = ImageLoader.loadImage("/resources/oakTree.png");
-		birchTree = ImageLoader.loadImage("/resources/birchTree.png");
-		spruceTree = ImageLoader.loadImage("/resources/spruceTree.png");
+		//oakTree = ImageLoader.loadImage("/resources/oakTree.png");
+		//birchTree = ImageLoader.loadImage("/resources/birchTree.png");
+		//spruceTree = ImageLoader.loadImage("/resources/spruceTree.png");
 		willowTree = ImageLoader.loadImage("/resources/willowTree.png");
 		mapleTree = ImageLoader.loadImage("/resources/mapleTree.png");
 		redwoodTree = ImageLoader.loadImage("/resources/redwoodTree.png");
 		arcaneTree = ImageLoader.loadImage("/resources/arcaneTree.png");
-		deadTree = ImageLoader.loadImage("/resources/deadTree.png");
+		//deadTree = ImageLoader.loadImage("/resources/deadTree.png");
 		
-		cobblestone = ImageLoader.loadImage("/resources/cobblestone.png");
-		dirtPath = ImageLoader.loadImage("/resources/dirtPath.png");
+		//cobblestone = ImageLoader.loadImage("/resources/cobblestone.png");
+		//dirtPath = ImageLoader.loadImage("/resources/dirtPath.png");
 		concrete = ImageLoader.loadImage("/resources/concrete.png");
-		stoneWall = ImageLoader.loadImage("/resources/stoneWall.png");
+		//stoneWall = ImageLoader.loadImage("/resources/stoneWall.png");
 		woodWall = ImageLoader.loadImage("/resources/woodWall.png");
 	}
 	

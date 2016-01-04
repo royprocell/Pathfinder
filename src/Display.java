@@ -14,6 +14,9 @@ public class Display implements KeyListener, MouseListener
 	private String title;
 	public int width, height;
 	private Canvas canvas;
+	private static boolean[] keys = new boolean[256];
+	public static boolean up, down, left, right;
+	private int key;
 	
 	public Display(String title, int width, int height)
 	{
@@ -46,19 +49,43 @@ public class Display implements KeyListener, MouseListener
 		frame.pack();
 	}
 
-	public void keyPressed(KeyEvent arg0)
+	public void keyPressed(KeyEvent e)
+	{
+		key = e.getKeyCode();
+		if (key == KeyEvent.VK_ESCAPE && State.getState() == Game.menuState) {
+			System.exit(0);
+		}
+
+		if (key == KeyEvent.VK_ESCAPE && State.getState() == Game.gameState) {
+			State.setState(Game.menuState);
+		}
+
+		if (key == KeyEvent.VK_ENTER && State.getState() == Game.menuState) {
+			State.setState(Game.gameState);
+		}
+		
+		if (key == KeyEvent.VK_E && State.getState() == Game.gameState) {
+			State.setState(Game.bankState);
+		}
+		keys[e.getKeyCode()] = true;
+	}
+
+	public void keyReleased(KeyEvent e)
+	{
+		keys[e.getKeyCode()] = false;
+	}
+
+	public void keyTyped(KeyEvent e)
 	{
 		
 	}
-
-	public void keyReleased(KeyEvent arg0)
+	
+	public static void updateKeys()
 	{
-		
-	}
-
-	public void keyTyped(KeyEvent arg0)
-	{
-		
+		up = keys[KeyEvent.VK_UP];
+		left = keys[KeyEvent.VK_A];
+		down = keys[KeyEvent.VK_S];
+		right = keys[KeyEvent.VK_D];
 	}
 	
 	public Canvas getCanvas()
@@ -66,27 +93,27 @@ public class Display implements KeyListener, MouseListener
 		return canvas;
 	}
 	
-	public void mouseClicked(MouseEvent arg0)
+	public void mouseClicked(MouseEvent e)
 	{
 		
 	}
 
-	public void mouseEntered(MouseEvent arg0)
+	public void mouseEntered(MouseEvent e)
 	{
 		
 	}
 
-	public void mouseExited(MouseEvent arg0)
+	public void mouseExited(MouseEvent e)
 	{
 		
 	}
 
-	public void mousePressed(MouseEvent arg0)
+	public void mousePressed(MouseEvent e)
 	{
 		
 	}
 
-	public void mouseReleased(MouseEvent arg0)
+	public void mouseReleased(MouseEvent e)
 	{
 		
 	}

@@ -4,6 +4,7 @@ import java.awt.image.BufferStrategy;
 public class Game
 {
 	private Display display;
+	public static Camera camera;
 	private Graphics g;
 	private BufferStrategy bs;
 	public static int width;
@@ -25,6 +26,8 @@ public class Game
 		gameState = new GameState();
 		menuState = new MenuState();
 		bankState = new BankState();
+		State.setState(gameState);
+		camera = new Camera(0, 0);
 	}
 	
 	private void update()
@@ -33,6 +36,7 @@ public class Game
 		{
 			State.getState().update();
 		}
+		Display.updateKeys();
 	}
 	
 	private void render()

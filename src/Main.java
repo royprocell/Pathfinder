@@ -21,7 +21,7 @@ public class Main
 		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/world.map");
 		System.out.println("First Byte: " + Assets.getWorldData()[1]);
 		
-		Assets.loadWorldConfig(System.getProperty("user.dir") + "/bin/resources/world.cfg");
+		Assets.loadWorldConfig(System.getProperty("user.dir") + "/src/resources/world.cfg");
 		
 		Game game = new Game("Pathfinder", width, height);
 		game.isRunning = true;

@@ -12,10 +12,10 @@ public class Tile
 	
 	public static Tile[] tiles = new Tile[256];
 	public static Tile air;
-	public static Tile dirt;
-	public static Tile grass;
+	public static Tile dirt = new Tile(Assets.dirt, 0); //test id
+	public static Tile grass = new Tile(Assets.grass, 97); //test id
 	public static Tile stone;
-	public static Tile blackDirt;
+	public static Tile blackDirt = new Tile(Assets.blackDirt, 102); //test id
 	public static Tile sand;
 	public static Tile snow;
 	public static Tile rock;
@@ -66,6 +66,11 @@ public class Tile
 	public int getID()
 	{
 		return id;
+	}
+	
+	public boolean isSolid()
+	{
+		return false;
 	}
 	
 	public boolean isResource()

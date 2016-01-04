@@ -1,11 +1,10 @@
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-
 public class World
 {
 	private int tiles[][];
-	private int width, height, xSpawn, ySpawn;
+	public static int width, height, xSpawn, ySpawn;
 	
 	public World()
 	{
@@ -26,14 +25,28 @@ public class World
 		{
 			for(int x = 0; x < width; x++)
 			{
-				tiles[x][y] = Assets.getWorldData()[(x + y * width)];
+				if(Assets.getWorldData().length > (x + y * width))
+				{
+					tiles[x][y] = Assets.getWorldData()[(x + y * width)];
+				}
+				else
+				{
+					tiles[x][y] = 0;
+				}
 			}
 		}
 	}
 	
 	public Tile getTile(int x, int y)
 	{
-		return null;
+		if (x < 0 || y < 0 || x >= width || y >= height) {
+			return Tile.dirt;
+		}
+		Tile t = Tile.tiles[tiles[x][y]];
+		if (t == null) {
+			return Tile.dirt;
+		}
+		return t;
 	}
 	
 	public Rectangle getBounds(int x, int y)
@@ -48,7 +61,15 @@ public class World
 	
 	public void render(Graphics g)
 	{
-		
+		for (int y = 0; y < height; y++)
+		{
+			for (int x = 0; x < width; x++)
+			{
+				if (x > (Camera.xOffset - 32) / 32 && y > (Camera.yOffset - 32) / 32 && x < (Camera.xOffset + Game.width) / 32 && y < (Camera.yOffset + Game.height) / 32) {
+					getTile(x, y).render(g, (x * Tile.width) - (int) Camera.xOffset, (y * Tile.height) - (int) Camera.yOffset);
+				}
+			}
+		}
 	}
 	
 }
