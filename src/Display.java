@@ -83,9 +83,9 @@ public class Display implements KeyListener, MouseListener
 	public static void updateKeys()
 	{
 		up = keys[KeyEvent.VK_UP];
-		left = keys[KeyEvent.VK_A];
-		down = keys[KeyEvent.VK_S];
-		right = keys[KeyEvent.VK_D];
+		left = keys[KeyEvent.VK_LEFT];
+		down = keys[KeyEvent.VK_DOWN];
+		right = keys[KeyEvent.VK_RIGHT];
 	}
 	
 	public Canvas getCanvas()
