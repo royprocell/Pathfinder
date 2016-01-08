@@ -4,6 +4,7 @@ import java.awt.Rectangle;
 public class World
 {
 	private int tiles[][];
+	private Rectangle tileRect[][];
 	public static int width, height, xSpawn, ySpawn;
 	
 	public World()
@@ -21,6 +22,7 @@ public class World
 		ySpawn = Assets.getYSpawn();
 		
 		tiles = new int[width][height];
+		tileRect = new Rectangle[width][height];
 		for(int y = 0; y < height; y++)
 		{
 			for(int x = 0; x < width; x++)
@@ -28,10 +30,12 @@ public class World
 				if(Assets.getWorldData().length > (x + y * width))
 				{
 					tiles[x][y] = Assets.getWorldData()[(x + y * width)];
+					tileRect[x][y] = getTile(x, y).getBounds(x, y);
 				}
 				else
 				{
 					tiles[x][y] = 0;
+					tileRect[x][y] = getTile(x, y).getBounds(x, y);
 				}
 			}
 		}
@@ -51,7 +55,8 @@ public class World
 	
 	public Rectangle getBounds(int x, int y)
 	{
-		return new Rectangle(x, y, 32, 32);
+		return tileRect[x][y];
+		//return new Rectangle(x, y, 32, 32);
 	}
 	
 	public void update()
@@ -71,5 +76,7 @@ public class World
 			}
 		}
 	}
+	
+	
 	
 }

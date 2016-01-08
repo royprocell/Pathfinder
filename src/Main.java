@@ -5,6 +5,7 @@ public class Main
 {
 	private static Dimension screen;
 	public static int width, height;
+	private static double testfukcinggofdamn = 0.125;
 
 	public static void main(String[] args)
 	{
@@ -18,10 +19,7 @@ public class Main
 		System.out.println("Screen: " + (int) screen.getWidth() + "x" + (int) screen.getHeight());
 		System.out.println("Game: " + width + "x" + height);
 		
-		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/world.map");
-		System.out.println("First Byte: " + Assets.getWorldData()[1]);
-		
-		Assets.loadWorldConfig(System.getProperty("user.dir") + "/src/resources/world.cfg");
+		System.out.println((int) testfukcinggofdamn);
 		
 		Game game = new Game("Pathfinder", width, height);
 		game.isRunning = true;

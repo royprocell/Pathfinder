@@ -13,7 +13,7 @@ public class EntityPlayer extends EntityMob
 		getInput();
 		move();
 		Game.camera.center(this);
-		System.out.println("Location: " + x + "," + y);
+		System.out.println("Location: " + (int) x/32 + "," + (int) y/32);
 		System.out.println("Movement Booleans: " + Display.up + "," + Display.down + "," + Display.right + "," + Display.left);
 	}
 
