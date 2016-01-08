@@ -25,10 +25,16 @@ public class Assets
 	//armor tiles
 	//item tiles
 	//player tiles
+	public static BufferedImage playerStill;
 	//hud tiles
 	
 	public static void init()
 	{
+		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/world.map");
+		System.out.println("First Byte: " + Assets.getWorldData()[1]);
+		
+		Assets.loadWorldConfig(System.getProperty("user.dir") + "/src/resources/world.cfg");
+		
 		dirt = ImageLoader.loadImage("/resources/dirt.png");
 		grass = ImageLoader.loadImage("/resources/grass.png");
 		//stone = ImageLoader.loadImage("/resources/stone.png");
@@ -64,6 +70,8 @@ public class Assets
 		concrete = ImageLoader.loadImage("/resources/concrete.png");
 		//stoneWall = ImageLoader.loadImage("/resources/stoneWall.png");
 		woodWall = ImageLoader.loadImage("/resources/woodWall.png");
+		
+		playerStill = ImageLoader.loadImage("/resources/playerStill.png");
 	}
 	
 	public static void loadWorld(String path) //this will load the world data file. this file stores the information about all the tiles on the map.

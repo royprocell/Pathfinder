@@ -8,7 +8,7 @@ public class GameState extends State
 	public GameState()
 	{
 		world = new World();
-		player = new EntityPlayer(World.xSpawn * 32, World.ySpawn * 32, 64, 64);
+		player = new EntityPlayer(World.xSpawn * 32, World.ySpawn * 32, 32, 32);
 	}
 	
 	public void update()

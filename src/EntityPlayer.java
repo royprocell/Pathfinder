@@ -5,7 +5,7 @@ public class EntityPlayer extends EntityMob
 
 	public EntityPlayer(float x, float y, int width, int height)
 	{
-		super(x, y, width, height);
+		super(x, y, 32, 32);
 	}
 
 	public void update()
@@ -19,7 +19,7 @@ public class EntityPlayer extends EntityMob
 
 	public void render(Graphics g)
 	{
-		
+		g.drawImage(Assets.playerStill, (int) (x - Camera.xOffset), (int) (y - Camera.yOffset), width, height, null);
 	}
 	
 	public void getInput()

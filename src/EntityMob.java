@@ -3,7 +3,7 @@ import java.awt.Graphics;
 public abstract class EntityMob extends Entity
 {
 	public static final int defaultHealth = 10;
-	public static final float defaultSpeed = 4;
+	public static final float defaultSpeed = 30;
 	public static final int defaultWidth = 32;
 	public static final int defaultHeight = 32;
 	protected int health;
@@ -37,25 +37,25 @@ public abstract class EntityMob extends Entity
 	private boolean isColliding(int xMove, int yMove)
 	{
 		// top left
-		if (GameState.world.getTile((int) ((x + xMove/* + 16 */) / 32), (int) ((y + yMove/* + 32 */)) / 32).isSolid())
+		if (GameState.world.getTile((int) ((x + xMove/* + 16 */) / 32), ((int) (y + yMove/* + 32 */) / 32)).isSolid())
 		{
 			return true;
 		}
 
 		// top right
-		if (GameState.world.getTile((int) (x + xMove + 32 - 1/* + 16 */) / 32, (int) (y + yMove/* + 32 */) / 32).isSolid())
+		if (GameState.world.getTile(((int) (x + xMove + 32 - 1/* + 16 */) / 32), ((int) (y + yMove/* + 32 */) / 32)).isSolid())
 		{
 			return true;
 		}
 
 		// bottom left
-		if (GameState.world.getTile((int) (x + xMove/* + 16 */) / 32, (int) (y + yMove + 32 - 1/* + 32 */) / 32).isSolid())
+		if (GameState.world.getTile(((int) (x + xMove/* + 16 */) / 32), ((int) (y + yMove + 32 - 1/* + 32 */) / 32)).isSolid())
 		{
 			return true;
 		}
 
 		// bottom right
-		if (GameState.world.getTile((int) (x + xMove + 32 - 1/* + 16 */) / 32, (int) (y + yMove + 32 - 1/* + 32 */) / 32).isSolid())
+		if (GameState.world.getTile(((int) (x + xMove + 32 - 1/* + 16 */) / 32), ((int) (y + yMove + 32 - 1/* + 32 */) / 32)).isSolid())
 		{
 			return true;
 		}
