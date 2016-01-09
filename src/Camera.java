@@ -15,7 +15,7 @@ public class Camera {
 	}
 
 	public void center(Entity e) {
-		xOffset = e.x - Game.width / 2;
-		yOffset = e.y - Game.height / 2;
+		xOffset = e.x - (Game.width / 2) + (e.width/2);
+		yOffset = e.y - (Game.height / 2) + (e.height/2);
 	}
 }
