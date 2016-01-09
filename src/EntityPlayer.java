@@ -5,7 +5,7 @@ public class EntityPlayer extends EntityMob
 
 	public EntityPlayer(float x, float y, int width, int height)
 	{
-		super(x, y, EntityMob.defaultWidth, EntityMob.defaultHeight);
+		super(x, y, 64, 64);//EntityMob.defaultWidth, EntityMob.defaultHeight);
 		speed = 16;
 	}
 
@@ -14,7 +14,7 @@ public class EntityPlayer extends EntityMob
 		getInput();
 		move();
 		Game.camera.center(this);
-		System.out.println("Location: " + (int) x/32 + "," + (int) y/32);
+		System.out.println("Location: " + (int) x/128 + "," + (int) y/128);
 		System.out.println("Movement Booleans: " + Display.up + "," + Display.down + "," + Display.right + "," + Display.left);
 	}
 

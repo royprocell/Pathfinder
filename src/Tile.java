@@ -7,8 +7,8 @@ public class Tile
 {
 	protected BufferedImage texture;
 	protected final int id;
-	public static final int width = 32;
-	public static final int height = 32;
+	public static final int width = 128;
+	public static final int height = 128;
 	protected final boolean isSolid;
 	
 	public static Tile[] tiles = new Tile[256];
@@ -83,7 +83,7 @@ public class Tile
 	
 	public Rectangle getBounds(int x, int y)
 	{
-		return new Rectangle(x, y, 32, 32);
+		return new Rectangle(x, y, 128, 128);
 	}
 	
 	public int maxResourceStackSize()

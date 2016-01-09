@@ -38,25 +38,25 @@ public abstract class EntityMob extends Entity
 	private boolean isColliding(int xMove, int yMove)
 	{	
 		// top left
-		if (GameState.world.getTile((int) ((x + xMove) / 32), (int) ((y + yMove)) / 32).isSolid())
+		if (GameState.world.getTile((int) ((x + xMove) / 128), (int) ((y + yMove)) / 128).isSolid())
 		{
 			return true;
 		}
 
 		// top right
-		if (GameState.world.getTile((int) (x + xMove + 32 - 1) / 32, (int) (y + yMove) / 32).isSolid())
+		if (GameState.world.getTile((int) (x + xMove + width/*32*/ - 1) / 128, (int) (y + yMove) / 128).isSolid())
 		{
 			return true;
 		}
 
 		// bottom left
-		if (GameState.world.getTile((int) (x + xMove) / 32, (int) (y + yMove + 32 - 1) / 32).isSolid())
+		if (GameState.world.getTile((int) (x + xMove) / 128, (int) (y + yMove + height/*32*/ - 1) / 128).isSolid())
 		{
 			return true;
 		}
 
 		// bottom right
-		if (GameState.world.getTile((int) (x + xMove + 32 - 1) / 32, (int) (y + yMove + 32 - 1) / 32).isSolid())
+		if (GameState.world.getTile((int) (x + xMove + width/*32*/ - 1) / 128, (int) (y + yMove + height/*32*/ - 1) / 128).isSolid())
 		{
 			return true;
 		}
