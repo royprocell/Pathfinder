@@ -5,7 +5,8 @@ public class EntityPlayer extends EntityMob
 
 	public EntityPlayer(float x, float y, int width, int height)
 	{
-		super(x, y, 32, 32);
+		super(x, y, EntityMob.defaultWidth, EntityMob.defaultHeight);
+		speed = 16;
 	}
 
 	public void update()
