@@ -15,7 +15,7 @@ public class World
 	private void loadWorld()
 	{
 		Assets.loadWorldConfig(System.getProperty("user.dir") + "/bin/resources/world.cfg");
-		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/world.map");
+		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/out.txt");
 		width = Assets.getWorldWidth();
 		height = Assets.getWorldHeight();
 		xSpawn = Assets.getXSpawn();

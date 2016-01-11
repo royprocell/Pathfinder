@@ -47,7 +47,7 @@ public class Tile
 	public static Tile willowTree = new Tile(Assets.dirt, 29, true);
 	public static Tile mapleTree = new Tile(Assets.mapleTree, 30, true);
 	public static Tile redwoodTree = new Tile(Assets.redwoodTree, 31, true);
-	public static Tile arcaneTree = new Tile(Assets.arcaneTree, 97, true);
+	public static Tile arcaneTree = new Tile(Assets.arcaneTree, 32, true);
 	
 	public Tile (BufferedImage texture, int id, boolean isSolid)
 	{

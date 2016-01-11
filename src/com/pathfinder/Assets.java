@@ -31,11 +31,6 @@ public class Assets
 	
 	public static void init()
 	{
-		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/world.map");
-		System.out.println("First Byte: " + Assets.getWorldData()[1]);
-		
-		Assets.loadWorldConfig(System.getProperty("user.dir") + "/src/resources/world.cfg");
-		
 		dirt = ImageLoader.loadImage("/resources/dirt.png");
 		grass = ImageLoader.loadImage("/resources/grass.png");
 		//stone = ImageLoader.loadImage("/resources/stone.png");
