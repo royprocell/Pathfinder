@@ -50,6 +50,18 @@ public class World
 		return t;
 	}
 	
+	public GameObject getGameObject(int x, int y)
+	{
+		if (x < 0 || y < 0 || x >= width || y >= height) {
+			return null;
+		}
+		GameObject o = GameObject.gameObjects[tiles[x][y]];
+		if (o == null) {
+			return null;
+		}
+		return o;
+	}
+	
 	public Rectangle getBounds(int x, int y)
 	{
 		return new Rectangle(x, y, 128, 128);
@@ -62,6 +74,18 @@ public class World
 	
 	public void render(Graphics g)
 	{
+		//render tiles
+		for (int y = 0; y < height; y++)
+		{
+			for (int x = 0; x < width; x++)
+			{
+				if (x > (Camera.xOffset - 128) / 128 && y > (Camera.yOffset - 128) / 128 && x < (Camera.xOffset + Game.width) / 128 && y < (Camera.yOffset + Game.height) / 128) {
+					getTile(x, y).render(g, (x * Tile.width) - (int) Camera.xOffset, (y * Tile.height) - (int) Camera.yOffset);
+				}
+			}
+		}
+		
+		//render objects
 		for (int y = 0; y < height; y++)
 		{
 			for (int x = 0; x < width; x++)

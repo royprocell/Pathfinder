@@ -15,6 +15,7 @@ public class Tile
 	public static Tile[] tiles = new Tile[256];
 	
 	public static Tile air = new Tile(Assets.dirt, 0, false);
+	public static Tile border = new Tile(Assets.dirt, 1, true);
 	public static Tile dirt = new Tile(Assets.dirt, 1, false);
 	public static Tile grass = new Tile(Assets.grass, 2, false);
 	public static Tile stone = new Tile(Assets.dirt, 3, false);
@@ -77,18 +78,8 @@ public class Tile
 		return isSolid;
 	}
 	
-	public boolean isResource()
-	{
-		return false;
-	}
-	
 	public Rectangle getBounds(int x, int y)
 	{
 		return new Rectangle(x, y, 128, 128);
-	}
-	
-	public int maxResourceStackSize()
-	{
-		return 64;
 	}
 }
