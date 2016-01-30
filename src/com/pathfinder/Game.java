@@ -70,7 +70,16 @@ public class Game
 			update();
 			render();
 			try {
-				Thread.sleep(33); //this will make sure that the speed that objects move in-game do not depend on cpu speed. this sets the fps at 30.
+				Thread.sleep(22);
+				/*
+				 * this will make sure that the speed that objects move in-game do not depend on cpu speed. this sets the fps at roughly 30.
+				 *during testing, setting Thread.sleep(33); would result in roughly 30fps for maps smaller than 300x300, however with larger
+				 *maps, such as 2048x2048, the fps was cut to about 10-15. the cause of this bug is unknown, or possibly due to having to
+				 *create a larger map. this was resolved by setting Thread.sleep(22);. this brought the fps back up to 30, but increased
+				 *cpu usage and memory usage. while i don't necessarily like having to use more cpu and memory resources for such a simple 
+				 *game, it seems necessary at the moment for larger maps, which will definitely be required for the final map design.
+				 *i will use this as a fix unless i can find a solution to larger maps creating lag with Thread.sleep(33);.
+				 */
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

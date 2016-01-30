@@ -15,7 +15,7 @@ public class World
 	private void loadWorld()
 	{
 		Assets.loadWorldConfig(System.getProperty("user.dir") + "/bin/resources/world.cfg");
-		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/out.txt");
+		Assets.loadWorld(System.getProperty("user.dir") + "/bin/resources/tiles.map");
 		width = Assets.getWorldWidth();
 		height = Assets.getWorldHeight();
 		xSpawn = Assets.getXSpawn();
@@ -86,7 +86,7 @@ public class World
 		}
 		
 		//render objects
-		for (int y = 0; y < height; y++)
+		/*for (int y = 0; y < height; y++)
 		{
 			for (int x = 0; x < width; x++)
 			{
@@ -94,7 +94,7 @@ public class World
 					getTile(x, y).render(g, (x * Tile.width) - (int) Camera.xOffset, (y * Tile.height) - (int) Camera.yOffset);
 				}
 			}
-		}
+		}*/
 	}
 	
 	

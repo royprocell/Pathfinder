@@ -16,23 +16,23 @@ public class Tile
 	
 	public static Tile air = new Tile(Assets.dirt, 0, false);
 	public static Tile border = new Tile(Assets.dirt, 1, true);
-	public static Tile dirt = new Tile(Assets.dirt, 1, false);
-	public static Tile grass = new Tile(Assets.grass, 2, false);
-	public static Tile stone = new Tile(Assets.dirt, 3, false);
-	public static Tile blackDirt = new Tile(Assets.blackDirt, 4, false);
-	public static Tile sand = new Tile(Assets.sand, 5, false);
-	public static Tile snow = new Tile(Assets.dirt, 6, false);
-	public static Tile rock = new Tile(Assets.dirt, 7, false);
+	public static Tile dirt = new Tile(Assets.dirt, 2, false);
+	public static Tile grass = new Tile(Assets.grass, 3, false);
+	public static Tile stone = new Tile(Assets.dirt, 4, false);
+	public static Tile blackDirt = new Tile(Assets.blackDirt, 5, false);
+	public static Tile sand = new Tile(Assets.sand, 6, false);
+	public static Tile snow = new Tile(Assets.dirt, 7, false);
 	public static Tile gravel = new Tile(Assets.dirt, 8, false);
-	public static Tile cobblestone = new Tile(Assets.dirt, 9, false);
-	public static Tile dirtPath = new Tile(Assets.dirt, 10, false);
-	public static Tile concrete = new Tile(Assets.concrete, 11, false);
-	public static Tile stoneWall = new Tile(Assets.dirt, 12, true);
-	public static Tile woodWall = new Tile(Assets.woodWall, 13, true);
-
-	public static Tile water = new Tile(Assets.water, 14, true);
-	public static Tile deepWater = new Tile(Assets.deepWater, 15, true);
-	public static Tile stoneOre = new Tile(Assets.stoneOre, 16, true );
+	public static Tile water = new Tile(Assets.water, 9, true);
+	public static Tile deepWater = new Tile(Assets.deepWater, 10, true);
+	public static Tile lava = new Tile(Assets.dirt, 11, false);
+	public static Tile cobblestone = new Tile(Assets.dirt, 12, false);
+	public static Tile dirtPath = new Tile(Assets.dirt, 13, false);
+	public static Tile concrete = new Tile(Assets.concrete, 14, false);
+	public static Tile stoneWall = new Tile(Assets.dirt, 15, true);
+	public static Tile woodWall = new Tile(Assets.woodWall, 16, true);
+	
+	/*public static Tile stoneOre = new Tile(Assets.stoneOre, 16, true );
 	public static Tile copperOre = new Tile(Assets.copperOre, 17, true);
 	public static Tile tinOre = new Tile(Assets.tinOre, 18, true);
 	public static Tile zincOre = new Tile(Assets.zincOre, 19, true);
@@ -48,7 +48,7 @@ public class Tile
 	public static Tile willowTree = new Tile(Assets.dirt, 29, true);
 	public static Tile mapleTree = new Tile(Assets.mapleTree, 30, true);
 	public static Tile redwoodTree = new Tile(Assets.redwoodTree, 31, true);
-	public static Tile arcaneTree = new Tile(Assets.arcaneTree, 32, true);
+	public static Tile arcaneTree = new Tile(Assets.arcaneTree, 32, true);*/
 	
 	public Tile (BufferedImage texture, int id, boolean isSolid)
 	{

@@ -68,6 +68,11 @@ public class Display implements KeyListener, MouseListener
 		if (key == KeyEvent.VK_E && State.getState() == Game.gameState) {
 			State.setState(Game.bankState);
 		}
+		
+		if (key == KeyEvent.VK_ESCAPE && State.getState() == Game.bankState) {
+			State.setState(Game.gameState);
+		}
+		
 		keys[e.getKeyCode()] = true;
 	}
 

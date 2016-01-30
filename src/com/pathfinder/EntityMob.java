@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public abstract class EntityMob extends Entity
 {
 	public static final int defaultHealth = 10;
-	public static final float defaultSpeed = 4;
+	public static final float defaultSpeed = 8;
 	public static final int defaultWidth = 32;
 	public static final int defaultHeight = 32;
 	protected int health;
@@ -24,6 +24,31 @@ public abstract class EntityMob extends Entity
 	
 	public void move()
 	{
+		/*liquid detection
+		if(GameState.world.getTile((int) x / 128, (int) y / 128) == Tile.water)
+		{
+			if(xMove < 0)
+			{
+				xMove = -8;
+			}
+			
+			if(yMove < 0)
+			{
+				yMove = -8;
+			}
+			
+			if(xMove > 0)
+			{
+				xMove = 8;
+			}
+			
+			if(yMove > 0)
+			{
+				yMove = 8;
+			}
+		}*/
+		
+		//collision detection
 		if(!isColliding((int) xMove, 0))
 		{
 			x += xMove;
@@ -33,7 +58,6 @@ public abstract class EntityMob extends Entity
 		{
 			y += yMove;
 		}
-
 	}
 	
 	private boolean isColliding(int xMove, int yMove)

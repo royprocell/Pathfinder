@@ -13,8 +13,8 @@ public class Main
 		System.out.println("User Home: " + System.getProperty("user.home"));
 		
 		screen = Toolkit.getDefaultToolkit().getScreenSize();
-		width = (int) screen.getWidth() - 100; //subtracted 100 so that the window fits with os toolbars, etc
-		height = (int) screen.getHeight() - 100;
+		width = (int) screen.getWidth() - 400; //subtracted 100 so that the window fits with os toolbars, etc
+		height = (int) screen.getHeight() - 400;
 		
 		System.out.println("Screen: " + (int) screen.getWidth() + "x" + (int) screen.getHeight());
 		System.out.println("Game: " + width + "x" + height);
